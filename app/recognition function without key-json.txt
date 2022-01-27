@@ -1,0 +1,12 @@
+normally is necessary the Key Jason from the Google Speech API but this function works without one
+
+###########FUNCTION SPEECH TO TEXT IN PYTHON####################
+
+# GOOGLE API Speech_To_Text
+def SpeechoToText():
+    AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)),dirFile+"/"+file)
+    r = sr.Recognizer()
+    with sr.AudioFile(AUDIO_FILE) as source:
+        audio = r.record(source)  # read the entire audio file
+    text_audio=r.recognize_google(audio)
+    return (text_audio)
